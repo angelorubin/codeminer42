@@ -1,0 +1,37 @@
+<DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="assets/css/log.css">
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	<script src="assets/js/log.js"></script>
+	<title>Log de Exercícios</title>
+</head>
+<body>
+	<div id="container">
+		<h2 class="titulo-medio alinhar-centro">Log de Exercícios</h2>
+		<fieldset>
+			<legend>Adicionar Exercício</legend>
+			<form>
+				<input type="text" id="tempo" placeholder="tempo">
+				<select name="tipo" id="tipo">
+					<option value="1">Corrida</option>
+					<option value="2">Natação</option>
+					<option value="3">Bicicleta</option>
+				</select>
+				<input type="date" id="data" placeholder="     /     /   " size="10"> 
+				<img src="assets/img/icon-calendar-2.png" width="15" height="15">
+				<button type="button" id="adicionar">add</button>
+			</form>
+		</fieldset>
+		<hr>
+		<table id="table-log">
+			<th>Tempo</th>
+			<th>Tipo</th>
+			<th>Data</th>
+			<th><img src="assets/img/icon-down-arrow.png" width="15" height="20"></th>
+		</table>
+		<p id="totalizador" class="alinhar-centro"><b></b></p>
+	</div>
+</body>
+</html>
