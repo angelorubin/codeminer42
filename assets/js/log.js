@@ -2,11 +2,9 @@
  * Objeto Literal - Log Exercicios
  */
 
- /*
-  Problemas a solucionar
-  1 - zebrar tr's
-  2 - modular css
-  3 - 
+ /**
+  * Problemas a solucionar
+  * 1 - listrar tr's
  */
 var log = {
 	
@@ -14,7 +12,7 @@ var log = {
 	{
 		$(document).on('click', '#adicionar', function() {
 			log.adicionar();
-			log.zebrar('tr:odd');
+			log.listrar();
 		});
 
 		$(document).on('click', '.remover', function() {
@@ -22,9 +20,8 @@ var log = {
 		});
 	},
 
-	zebrar: function(elemento)
-	{
-		return $(elemento).css( "background-color", "#E0EEEE" );
+	listrar: function(){
+		$('#table-log tr:even').addClass('odd-row');
 	},
 
 	adicionar: function()
@@ -54,6 +51,7 @@ var log = {
 				'<td><img src="assets/img/icon-remove.png" class="remover" width="25" height="25"></td>'+
 			'</tr>'
 		);
+		
 		log.calcular();
 	},
 
@@ -70,6 +68,7 @@ var log = {
 	{
 		$(elemento).parents('tr').remove();
 		log.calcular();
+		log.listrar();
 	}
 
 };

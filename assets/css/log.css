@@ -12,8 +12,9 @@
 	text-align: center;
 }
 
-hr {
+.separador {
 	margin: 30px 0 30px 0;
+	border: 1px solid #CCC;
 }
 
 #table-log th {
@@ -28,4 +29,8 @@ hr {
 
 .alinhar-centro {
 	text-align: center;
+}
+
+.odd-row {
+	background-color: yellow;
 }
