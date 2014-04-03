@@ -3,20 +3,28 @@
  */
 
  /*
- Problemas a solucionar
-  1 - 
+  Problemas a solucionar
+  1 - zebrar tr's
+  2 - modular css
+  3 - 
  */
 var log = {
 	
-	iniciar: function() 
+	iniciar: function()
 	{
 		$(document).on('click', '#adicionar', function() {
 			log.adicionar();
+			log.zebrar('tr:odd');
 		});
 
 		$(document).on('click', '.remover', function() {
 			log.remover($(this));
 		});
+	},
+
+	zebrar: function(elemento)
+	{
+		return $(elemento).css( "background-color", "#E0EEEE" );
 	},
 
 	adicionar: function()
@@ -60,14 +68,10 @@ var log = {
 
 	remover: function(elemento)
 	{
-		$(elemento).parent().parent().remove();
+		$(elemento).parents('tr').remove();
 		log.calcular();
-	},
-
-	zebra: function(elemento)
-	{
-		$(elemento).css( "background-color", "#E0EEEE" );
 	}
+
 };
 /**
  * Inicializador
