@@ -31,6 +31,6 @@
 	text-align: center;
 }
 
-.odd-row {
-	background-color: yellow;
+.odd {
+	background: yellow;
 }

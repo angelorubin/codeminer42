@@ -12,16 +12,11 @@ var log = {
 	{
 		$(document).on('click', '#adicionar', function() {
 			log.adicionar();
-			log.listrar();
 		});
 
 		$(document).on('click', '.remover', function() {
 			log.remover($(this));
 		});
-	},
-
-	listrar: function(){
-		$('#table-log tr:even').addClass('odd-row');
 	},
 
 	adicionar: function()
@@ -43,15 +38,15 @@ var log = {
 			break;
 		}
 
-		$('#table-log').append (
+		$(
 			'<tr>'+
 				'<td>' + tempo + 'h</td>'+
 				'<td>' + tipo + '</td>'+
 				'<td>' + data + '</td>'+
 				'<td><img src="assets/img/icon-remove.png" class="remover" width="25" height="25"></td>'+
 			'</tr>'
-		);
-		
+		).appendTo ('#table-log');
+		$('#table-log tr:odd').addClass('odd');	
 		log.calcular();
 	},
 
@@ -67,8 +62,9 @@ var log = {
 	remover: function(elemento)
 	{
 		$(elemento).parents('tr').remove();
-		log.calcular();
-		log.listrar();
+		log.calcular();		
+		$( "#table-log tr" ).removeClass('odd');
+		$( "#table-log tr:odd" ).addClass('odd');
 	}
 
 };
